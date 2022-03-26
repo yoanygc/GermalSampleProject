@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CrushWeighDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Model2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SelectAllTicketsByCustomersViews" EntityType="CrushWeighDBModel.SelectAllTicketsByCustomersView" />
+    <EntitySet Name="SelectAllTicketsViews" EntityType="CrushWeighDBModel.SelectAllTicketsView" />
+    <EntitySet Name="TotalNetWeightByCustomersViews" EntityType="CrushWeighDBModel.TotalNetWeightByCustomersView" />
+  </EntityContainer>
+  <EntityType Name="SelectAllTicketsByCustomersView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="SeqNumber" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateTimeIn" Type="DateTime" Precision="3" />
+    <Property Name="DateTimeOut" Type="DateTime" Precision="3" />
+    <Property Name="NetWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="Tare" Type="Double" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SeqNumber" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SelectAllTicketsView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="SeqNumber" />
+      <PropertyRef Name="PlateNumber" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="Material" />
+      <PropertyRef Name="TicketStatus" />
+      <PropertyRef Name="Driver" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SeqNumber" Type="Int32" Nullable="false" />
+    <Property Name="DateTimeIn" Type="DateTime" Precision="3" />
+    <Property Name="DateTimeOut" Type="DateTime" Precision="3" />
+    <Property Name="PlateNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerMailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Material" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TicketStatus" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Driver" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NetWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="Tare" Type="Double" />
+  </EntityType>
+  <EntityType Name="TotalNetWeightByCustomersView">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NetWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="Tare" Type="Double" />
+    <Property Name="DateTimeOut" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

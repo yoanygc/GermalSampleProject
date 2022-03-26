@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ViewsModelStoreContainer" CdmEntityContainer="CrushWeighDBEntities2">
+    <EntitySetMapping Name="SelectAllTicketsViews">
+      <EntityTypeMapping TypeName="ViewsModel.SelectAllTicketsView">
+        <MappingFragment StoreEntitySet="SelectAllTicketsView">
+          <ScalarProperty Name="DateTimeIn" ColumnName="DateTimeIn" />
+          <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

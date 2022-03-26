@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40684ffe3a7b4311a5e16ed9b6db7e7b" Name="Diagram1" ZoomLevel="96" >
+        <EntityTypeShape EntityType="Model1.Customer" Width="1.5" PointX="5.125" PointY="3" />
+        <EntityTypeShape EntityType="Model1.Driver" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="Model1.Ticket" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="Model1.Truck" Width="1.5" PointX="0.5" PointY="5.125" />
+        <AssociationConnector Association="Model1.TruckTicket" />
+        <AssociationConnector Association="Model1.DriverTicket" />
+        <EntityTypeShape EntityType="Model1.Material" Width="1.5" PointX="0.5" PointY="3" />
+        <AssociationConnector Association="Model1.MaterialTicket" />
+        <EntityTypeShape EntityType="Model1.TicketStatus" Width="1.5" PointX="5.125" PointY="6.75" />
+        <AssociationConnector Association="Model1.TicketStatusTicket" />
+        <AssociationConnector Association="Model1.CustomerTicket" />
+        <EntityTypeShape EntityType="Model1.SystemConfig" Width="1.5" PointX="8.375" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.PricesByClient" Width="1.5" PointX="3" PointY="0.5" />
+        <AssociationConnector Association="Model1.MaterialPricesByClient" />
+        <AssociationConnector Association="Model1.CustomerPricesByClient" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

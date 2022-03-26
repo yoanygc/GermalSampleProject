@@ -1,0 +1,1 @@
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\PopulateDataDBProject\PopulateDataDBProject.csproj;x86

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CrushWeighDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrushWeighDB.dbo.SelectAllTicketsByCustomersView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SelectAllTicketsByCustomersView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="SeqNumber" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SeqNumber" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateTimeIn" Type="datetime" />
+          <Property Name="DateTimeOut" Type="datetime" />
+          <Property Name="NetWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="Tare" Type="float" />
+          <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrushWeighDB.dbo.SelectAllTicketsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SelectAllTicketsView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="SeqNumber" />
+            <PropertyRef Name="PlateNumber" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="Material" />
+            <PropertyRef Name="TicketStatus" />
+            <PropertyRef Name="Driver" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SeqNumber" Type="int" Nullable="false" />
+          <Property Name="DateTimeIn" Type="datetime" />
+          <Property Name="DateTimeOut" Type="datetime" />
+          <Property Name="PlateNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CustomerPhone" Type="nvarchar(max)" />
+          <Property Name="CustomerLocation" Type="nvarchar(max)" />
+          <Property Name="CustomerMailAddress" Type="nvarchar(max)" />
+          <Property Name="Material" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TicketStatus" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Driver" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NetWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="Tare" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CrushWeighDB.dbo.TotalNetWeightByCustomersView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TotalNetWeightByCustomersView">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateTimeOut" Type="datetime" />
+          <Property Name="Tare" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="NetWeight" Type="float" />
+        </EntityType>
+        <EntityContainer Name="CrushWeighDBModelStoreContainer">
+          <EntitySet Name="SelectAllTicketsByCustomersView" EntityType="Self.SelectAllTicketsByCustomersView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SelectAllTicketsByCustomersView].[Id] AS [Id], 
+    [SelectAllTicketsByCustomersView].[SeqNumber] AS [SeqNumber], 
+    [SelectAllTicketsByCustomersView].[Name] AS [Name], 
+    [SelectAllTicketsByCustomersView].[DateTimeIn] AS [DateTimeIn], 
+    [SelectAllTicketsByCustomersView].[DateTimeOut] AS [DateTimeOut], 
+    [SelectAllTicketsByCustomersView].[NetWeight] AS [NetWeight], 
+    [SelectAllTicketsByCustomersView].[GrossWeight] AS [GrossWeight], 
+    [SelectAllTicketsByCustomersView].[Tare] AS [Tare], 
+    [SelectAllTicketsByCustomersView].[Status] AS [Status]
+    FROM [dbo].[SelectAllTicketsByCustomersView] AS [SelectAllTicketsByCustomersView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SelectAllTicketsView" EntityType="Self.SelectAllTicketsView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SelectAllTicketsView].[Id] AS [Id], 
+    [SelectAllTicketsView].[SeqNumber] AS [SeqNumber], 
+    [SelectAllTicketsView].[DateTimeIn] AS [DateTimeIn], 
+    [SelectAllTicketsView].[DateTimeOut] AS [DateTimeOut], 
+    [SelectAllTicketsView].[PlateNumber] AS [PlateNumber], 
+    [SelectAllTicketsView].[CustomerName] AS [CustomerName], 
+    [SelectAllTicketsView].[CustomerPhone] AS [CustomerPhone], 
+    [SelectAllTicketsView].[CustomerLocation] AS [CustomerLocation], 
+    [SelectAllTicketsView].[CustomerMailAddress] AS [CustomerMailAddress], 
+    [SelectAllTicketsView].[Material] AS [Material], 
+    [SelectAllTicketsView].[TicketStatus] AS [TicketStatus], 
+    [SelectAllTicketsView].[Driver] AS [Driver], 
+    [SelectAllTicketsView].[NetWeight] AS [NetWeight], 
+    [SelectAllTicketsView].[GrossWeight] AS [GrossWeight], 
+    [SelectAllTicketsView].[Tare] AS [Tare]
+    FROM [dbo].[SelectAllTicketsView] AS [SelectAllTicketsView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TotalNetWeightByCustomersView" EntityType="Self.TotalNetWeightByCustomersView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TotalNetWeightByCustomersView].[Name] AS [Name], 
+    [TotalNetWeightByCustomersView].[DateTimeOut] AS [DateTimeOut], 
+    [TotalNetWeightByCustomersView].[Tare] AS [Tare], 
+    [TotalNetWeightByCustomersView].[GrossWeight] AS [GrossWeight], 
+    [TotalNetWeightByCustomersView].[NetWeight] AS [NetWeight]
+    FROM [dbo].[TotalNetWeightByCustomersView] AS [TotalNetWeightByCustomersView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CrushWeighDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Model2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SelectAllTicketsByCustomersViews" EntityType="CrushWeighDBModel.SelectAllTicketsByCustomersView" />
+          <EntitySet Name="SelectAllTicketsViews" EntityType="CrushWeighDBModel.SelectAllTicketsView" />
+          <EntitySet Name="TotalNetWeightByCustomersViews" EntityType="CrushWeighDBModel.TotalNetWeightByCustomersView" />
+        </EntityContainer>
+        <EntityType Name="SelectAllTicketsByCustomersView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="SeqNumber" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateTimeIn" Type="DateTime" Precision="3" />
+          <Property Name="DateTimeOut" Type="DateTime" Precision="3" />
+          <Property Name="NetWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="Tare" Type="Double" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SeqNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SelectAllTicketsView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="SeqNumber" />
+            <PropertyRef Name="PlateNumber" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="Material" />
+            <PropertyRef Name="TicketStatus" />
+            <PropertyRef Name="Driver" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SeqNumber" Type="Int32" Nullable="false" />
+          <Property Name="DateTimeIn" Type="DateTime" Precision="3" />
+          <Property Name="DateTimeOut" Type="DateTime" Precision="3" />
+          <Property Name="PlateNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerMailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Material" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TicketStatus" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Driver" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NetWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="Tare" Type="Double" />
+        </EntityType>
+        <EntityType Name="TotalNetWeightByCustomersView">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NetWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="Tare" Type="Double" />
+          <Property Name="DateTimeOut" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CrushWeighDBModelStoreContainer" CdmEntityContainer="Model2Entities">
+          <EntitySetMapping Name="SelectAllTicketsByCustomersViews">
+            <EntityTypeMapping TypeName="CrushWeighDBModel.SelectAllTicketsByCustomersView">
+              <MappingFragment StoreEntitySet="SelectAllTicketsByCustomersView">
+                <ScalarProperty Name="SeqNumber" ColumnName="SeqNumber" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Tare" ColumnName="Tare" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+                <ScalarProperty Name="DateTimeIn" ColumnName="DateTimeIn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectAllTicketsViews">
+            <EntityTypeMapping TypeName="CrushWeighDBModel.SelectAllTicketsView">
+              <MappingFragment StoreEntitySet="SelectAllTicketsView">
+                <ScalarProperty Name="Tare" ColumnName="Tare" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="CustomerMailAddress" ColumnName="CustomerMailAddress" />
+                <ScalarProperty Name="CustomerLocation" ColumnName="CustomerLocation" />
+                <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+                <ScalarProperty Name="DateTimeIn" ColumnName="DateTimeIn" />
+                <ScalarProperty Name="SeqNumber" ColumnName="SeqNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TotalNetWeightByCustomersViews">
+            <EntityTypeMapping TypeName="CrushWeighDBModel.TotalNetWeightByCustomersView">
+              <MappingFragment StoreEntitySet="TotalNetWeightByCustomersView">
+                <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+                <ScalarProperty Name="Tare" ColumnName="Tare" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

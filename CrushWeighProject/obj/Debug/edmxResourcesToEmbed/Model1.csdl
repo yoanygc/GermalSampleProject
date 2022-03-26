@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Model1.Customer" />
+    <EntitySet Name="Drivers" EntityType="Model1.Driver" />
+    <EntitySet Name="Tickets" EntityType="Model1.Ticket" />
+    <EntitySet Name="Trucks" EntityType="Model1.Truck" />
+    <AssociationSet Name="TruckTicket" Association="Model1.TruckTicket">
+      <End Role="Truck" EntitySet="Trucks" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="DriverTicket" Association="Model1.DriverTicket">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <EntitySet Name="Materials" EntityType="Model1.Material" />
+    <AssociationSet Name="MaterialTicket" Association="Model1.MaterialTicket">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <EntitySet Name="TicketStatus" EntityType="Model1.TicketStatus" />
+    <AssociationSet Name="TicketStatusTicket" Association="Model1.TicketStatusTicket">
+      <End Role="TicketStatus" EntitySet="TicketStatus" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerTicket" Association="Model1.CustomerTicket">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <EntitySet Name="SystemConfigs" EntityType="Model1.SystemConfig" />
+    <EntitySet Name="PricesByClients" EntityType="Model1.PricesByClient" />
+    <AssociationSet Name="MaterialPricesByClient" Association="Model1.MaterialPricesByClient">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="PricesByClient" EntitySet="PricesByClients" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerPricesByClient" Association="Model1.CustomerPricesByClient">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="PricesByClient" EntitySet="PricesByClients" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Phone" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tickets" Relationship="Model1.CustomerTicket" FromRole="Customer" ToRole="Ticket" />
+    <Property Name="Location" Type="String" />
+    <Property Name="MailingAddress" Type="String" Nullable="true" />
+    <NavigationProperty Name="PricesByClients" Relationship="Model1.CustomerPricesByClient" FromRole="Customer" ToRole="PricesByClient" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LicenseNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tickets" Relationship="Model1.DriverTicket" FromRole="Driver" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeqNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <NavigationProperty Name="Truck" Relationship="Model1.TruckTicket" FromRole="Ticket" ToRole="Truck" />
+    <NavigationProperty Name="Driver" Relationship="Model1.DriverTicket" FromRole="Ticket" ToRole="Driver" />
+    <Property Name="DateTimeIn" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="DateTimeOut" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="Tare" Type="Double" Nullable="true" />
+    <Property Name="GrossWeight" Type="Double" Nullable="true" />
+    <NavigationProperty Name="Material" Relationship="Model1.MaterialTicket" FromRole="Ticket" ToRole="Material" />
+    <NavigationProperty Name="TicketStatus" Relationship="Model1.TicketStatusTicket" FromRole="Ticket" ToRole="TicketStatus" />
+    <NavigationProperty Name="Customer" Relationship="Model1.CustomerTicket" FromRole="Ticket" ToRole="Customer" />
+    <Property Name="NetWeight" Type="Double" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Truck">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlateNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tickets" Relationship="Model1.TruckTicket" FromRole="Truck" ToRole="Ticket" />
+  </EntityType>
+  <Association Name="TruckTicket">
+    <End Type="Model1.Truck" Role="Truck" Multiplicity="1" />
+    <End Type="Model1.Ticket" Role="Ticket" Multiplicity="*" />
+  </Association>
+  <Association Name="DriverTicket">
+    <End Type="Model1.Driver" Role="Driver" Multiplicity="1" />
+    <End Type="Model1.Ticket" Role="Ticket" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tickets" Relationship="Model1.MaterialTicket" FromRole="Material" ToRole="Ticket" />
+    <Property Name="BasePrice" Type="Double" Nullable="false" />
+    <NavigationProperty Name="PricesByClients" Relationship="Model1.MaterialPricesByClient" FromRole="Material" ToRole="PricesByClient" />
+  </EntityType>
+  <Association Name="MaterialTicket">
+    <End Type="Model1.Material" Role="Material" Multiplicity="1" />
+    <End Type="Model1.Ticket" Role="Ticket" Multiplicity="*" />
+  </Association>
+  <EntityType Name="TicketStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tickets" Relationship="Model1.TicketStatusTicket" FromRole="TicketStatus" ToRole="Ticket" />
+  </EntityType>
+  <Association Name="TicketStatusTicket">
+    <End Type="Model1.TicketStatus" Role="TicketStatus" Multiplicity="1" />
+    <End Type="Model1.Ticket" Role="Ticket" Multiplicity="*" />
+  </Association>
+  <Association Name="CustomerTicket">
+    <End Type="Model1.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="Model1.Ticket" Role="Ticket" Multiplicity="*" />
+  </Association>
+  <EntityType Name="SystemConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KeyName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PricesByClient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Material" Relationship="Model1.MaterialPricesByClient" FromRole="PricesByClient" ToRole="Material" />
+    <NavigationProperty Name="Customer" Relationship="Model1.CustomerPricesByClient" FromRole="PricesByClient" ToRole="Customer" />
+  </EntityType>
+  <Association Name="MaterialPricesByClient">
+    <End Type="Model1.Material" Role="Material" Multiplicity="1" />
+    <End Type="Model1.PricesByClient" Role="PricesByClient" Multiplicity="*" />
+  </Association>
+  <Association Name="CustomerPricesByClient">
+    <End Type="Model1.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="Model1.PricesByClient" Role="PricesByClient" Multiplicity="*" />
+  </Association>
+</Schema>

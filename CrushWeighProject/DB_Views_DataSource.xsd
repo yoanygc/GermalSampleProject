@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DB_Views_DataSource" targetNamespace="http://tempuri.org/DB_Views_DataSource.xsd" xmlns:mstns="http://tempuri.org/DB_Views_DataSource.xsd" xmlns="http://tempuri.org/DB_Views_DataSource.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CrushWeighDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CrushWeighDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CrushWeighProject.Properties.Settings.GlobalReference.Default.CrushWeighDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SelectAllTicketsByCustomersViewTableAdapter" GeneratorDataComponentClassName="SelectAllTicketsByCustomersViewTableAdapter" Name="SelectAllTicketsByCustomersView" UserDataComponentName="SelectAllTicketsByCustomersViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CrushWeighDBConnectionString (Settings)" DbObjectName="CrushWeighDB.dbo.SelectAllTicketsByCustomersView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Name, DateTimeIn, DateTimeOut, NetWeight, GrossWeight, Tare, Status, SeqNumber FROM SelectAllTicketsByCustomersView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="DateTimeIn" DataSetColumn="DateTimeIn" />
+              <Mapping SourceColumn="DateTimeOut" DataSetColumn="DateTimeOut" />
+              <Mapping SourceColumn="NetWeight" DataSetColumn="NetWeight" />
+              <Mapping SourceColumn="GrossWeight" DataSetColumn="GrossWeight" />
+              <Mapping SourceColumn="Tare" DataSetColumn="Tare" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="SeqNumber" DataSetColumn="SeqNumber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SelectAllTicketsViewTableAdapter" GeneratorDataComponentClassName="SelectAllTicketsViewTableAdapter" Name="SelectAllTicketsView" UserDataComponentName="SelectAllTicketsViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CrushWeighDBConnectionString (Settings)" DbObjectName="CrushWeighDB.dbo.SelectAllTicketsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, DateTimeIn, DateTimeOut, PlateNumber, Material, TicketStatus, SeqNumber, Driver, GrossWeight, NetWeight, Tare, CustomerLocation, CustomerMailAddress, CustomerName, CustomerPhone FROM SelectAllTicketsView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="DateTimeIn" DataSetColumn="DateTimeIn" />
+              <Mapping SourceColumn="DateTimeOut" DataSetColumn="DateTimeOut" />
+              <Mapping SourceColumn="PlateNumber" DataSetColumn="PlateNumber" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+              <Mapping SourceColumn="TicketStatus" DataSetColumn="TicketStatus" />
+              <Mapping SourceColumn="SeqNumber" DataSetColumn="SeqNumber" />
+              <Mapping SourceColumn="Driver" DataSetColumn="Driver" />
+              <Mapping SourceColumn="NetWeight" DataSetColumn="NetWeight" />
+              <Mapping SourceColumn="GrossWeight" DataSetColumn="GrossWeight" />
+              <Mapping SourceColumn="Tare" DataSetColumn="Tare" />
+              <Mapping SourceColumn="CustomerName" DataSetColumn="CustomerName" />
+              <Mapping SourceColumn="CustomerPhone" DataSetColumn="CustomerPhone" />
+              <Mapping SourceColumn="CustomerLocation" DataSetColumn="CustomerLocation" />
+              <Mapping SourceColumn="CustomerMailAddress" DataSetColumn="CustomerMailAddress" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CrushWeighDBConnectionString (Settings)" DbObjectName="CrushWeighDB.dbo.SelectAllTicketsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByTicketId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTicketId" GeneratorSourceName="FillByTicketId" GetMethodModifier="Public" GetMethodName="GetDataByTicketId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTicketId" UserSourceName="FillByTicketId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, DateTimeIn, DateTimeOut, PlateNumber, Material, TicketStatus, SeqNumber, Driver, GrossWeight, NetWeight, Tare, CustomerLocation, CustomerMailAddress, CustomerName, CustomerPhone FROM SelectAllTicketsView WHERE (Id = @ticketId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ticketId" ColumnName="Id" DataSourceName="CrushWeighDB.dbo.SelectAllTicketsView" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ticketId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TotalNetWeightByCustomersViewTableAdapter" GeneratorDataComponentClassName="TotalNetWeightByCustomersViewTableAdapter" Name="TotalNetWeightByCustomersView" UserDataComponentName="TotalNetWeightByCustomersViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CrushWeighDBConnectionString (Settings)" DbObjectName="CrushWeighDB.dbo.TotalNetWeightByCustomersView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NetWeight, GrossWeight, Tare, DateTimeOut, Customer, Material, TicketNumber FROM TotalNetWeightByCustomersView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NetWeight" DataSetColumn="NetWeight" />
+              <Mapping SourceColumn="GrossWeight" DataSetColumn="GrossWeight" />
+              <Mapping SourceColumn="Tare" DataSetColumn="Tare" />
+              <Mapping SourceColumn="DateTimeOut" DataSetColumn="DateTimeOut" />
+              <Mapping SourceColumn="Customer" DataSetColumn="Customer" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+              <Mapping SourceColumn="TicketNumber" DataSetColumn="TicketNumber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DB_Views_DataSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DB_Views_DataSource" msprop:Generator_UserDSName="DB_Views_DataSource">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SelectAllTicketsByCustomersView" msprop:Generator_TableClassName="SelectAllTicketsByCustomersViewDataTable" msprop:Generator_TableVarName="tableSelectAllTicketsByCustomersView" msprop:Generator_TablePropName="SelectAllTicketsByCustomersView" msprop:Generator_RowDeletingName="SelectAllTicketsByCustomersViewRowDeleting" msprop:Generator_RowChangingName="SelectAllTicketsByCustomersViewRowChanging" msprop:Generator_RowEvHandlerName="SelectAllTicketsByCustomersViewRowChangeEventHandler" msprop:Generator_RowDeletedName="SelectAllTicketsByCustomersViewRowDeleted" msprop:Generator_UserTableName="SelectAllTicketsByCustomersView" msprop:Generator_RowChangedName="SelectAllTicketsByCustomersViewRowChanged" msprop:Generator_RowEvArgName="SelectAllTicketsByCustomersViewRowChangeEvent" msprop:Generator_RowClassName="SelectAllTicketsByCustomersViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateTimeIn" msprop:Generator_ColumnVarNameInTable="columnDateTimeIn" msprop:Generator_ColumnPropNameInRow="DateTimeIn" msprop:Generator_ColumnPropNameInTable="DateTimeInColumn" msprop:Generator_UserColumnName="DateTimeIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateTimeOut" msprop:Generator_ColumnVarNameInTable="columnDateTimeOut" msprop:Generator_ColumnPropNameInRow="DateTimeOut" msprop:Generator_ColumnPropNameInTable="DateTimeOutColumn" msprop:Generator_UserColumnName="DateTimeOut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NetWeight" msprop:Generator_ColumnVarNameInTable="columnNetWeight" msprop:Generator_ColumnPropNameInRow="NetWeight" msprop:Generator_ColumnPropNameInTable="NetWeightColumn" msprop:Generator_UserColumnName="NetWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="GrossWeight" msprop:Generator_ColumnVarNameInTable="columnGrossWeight" msprop:Generator_ColumnPropNameInRow="GrossWeight" msprop:Generator_ColumnPropNameInTable="GrossWeightColumn" msprop:Generator_UserColumnName="GrossWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="Tare" msprop:Generator_ColumnVarNameInTable="columnTare" msprop:Generator_ColumnPropNameInRow="Tare" msprop:Generator_ColumnPropNameInTable="TareColumn" msprop:Generator_UserColumnName="Tare" type="xs:double" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SeqNumber" msprop:Generator_ColumnVarNameInTable="columnSeqNumber" msprop:Generator_ColumnPropNameInRow="SeqNumber" msprop:Generator_ColumnPropNameInTable="SeqNumberColumn" msprop:Generator_UserColumnName="SeqNumber" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SelectAllTicketsView" msprop:Generator_TableClassName="SelectAllTicketsViewDataTable" msprop:Generator_TableVarName="tableSelectAllTicketsView" msprop:Generator_TablePropName="SelectAllTicketsView" msprop:Generator_RowDeletingName="SelectAllTicketsViewRowDeleting" msprop:Generator_RowChangingName="SelectAllTicketsViewRowChanging" msprop:Generator_RowEvHandlerName="SelectAllTicketsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="SelectAllTicketsViewRowDeleted" msprop:Generator_UserTableName="SelectAllTicketsView" msprop:Generator_RowChangedName="SelectAllTicketsViewRowChanged" msprop:Generator_RowEvArgName="SelectAllTicketsViewRowChangeEvent" msprop:Generator_RowClassName="SelectAllTicketsViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="DateTimeIn" msprop:Generator_ColumnVarNameInTable="columnDateTimeIn" msprop:Generator_ColumnPropNameInRow="DateTimeIn" msprop:Generator_ColumnPropNameInTable="DateTimeInColumn" msprop:Generator_UserColumnName="DateTimeIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateTimeOut" msprop:Generator_ColumnVarNameInTable="columnDateTimeOut" msprop:Generator_ColumnPropNameInRow="DateTimeOut" msprop:Generator_ColumnPropNameInTable="DateTimeOutColumn" msprop:Generator_UserColumnName="DateTimeOut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PlateNumber" msprop:Generator_ColumnVarNameInTable="columnPlateNumber" msprop:Generator_ColumnPropNameInRow="PlateNumber" msprop:Generator_ColumnPropNameInTable="PlateNumberColumn" msprop:Generator_UserColumnName="PlateNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TicketStatus" msprop:Generator_ColumnVarNameInTable="columnTicketStatus" msprop:Generator_ColumnPropNameInRow="TicketStatus" msprop:Generator_ColumnPropNameInTable="TicketStatusColumn" msprop:Generator_UserColumnName="TicketStatus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SeqNumber" msprop:Generator_ColumnVarNameInTable="columnSeqNumber" msprop:Generator_ColumnPropNameInRow="SeqNumber" msprop:Generator_ColumnPropNameInTable="SeqNumberColumn" msprop:Generator_UserColumnName="SeqNumber" type="xs:int" />
+              <xs:element name="Driver" msprop:Generator_ColumnVarNameInTable="columnDriver" msprop:Generator_ColumnPropNameInRow="Driver" msprop:Generator_ColumnPropNameInTable="DriverColumn" msprop:Generator_UserColumnName="Driver">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NetWeight" msprop:Generator_ColumnVarNameInTable="columnNetWeight" msprop:Generator_ColumnPropNameInRow="NetWeight" msprop:Generator_ColumnPropNameInTable="NetWeightColumn" msprop:Generator_UserColumnName="NetWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="GrossWeight" msprop:Generator_ColumnVarNameInTable="columnGrossWeight" msprop:Generator_ColumnPropNameInRow="GrossWeight" msprop:Generator_ColumnPropNameInTable="GrossWeightColumn" msprop:Generator_UserColumnName="GrossWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="Tare" msprop:Generator_ColumnVarNameInTable="columnTare" msprop:Generator_ColumnPropNameInRow="Tare" msprop:Generator_ColumnPropNameInTable="TareColumn" msprop:Generator_UserColumnName="Tare" type="xs:double" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerPhone" msprop:Generator_ColumnVarNameInTable="columnCustomerPhone" msprop:Generator_ColumnPropNameInRow="CustomerPhone" msprop:Generator_ColumnPropNameInTable="CustomerPhoneColumn" msprop:Generator_UserColumnName="CustomerPhone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerLocation" msprop:Generator_ColumnVarNameInTable="columnCustomerLocation" msprop:Generator_ColumnPropNameInRow="CustomerLocation" msprop:Generator_ColumnPropNameInTable="CustomerLocationColumn" msprop:Generator_UserColumnName="CustomerLocation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerMailAddress" msprop:Generator_ColumnVarNameInTable="columnCustomerMailAddress" msprop:Generator_ColumnPropNameInRow="CustomerMailAddress" msprop:Generator_ColumnPropNameInTable="CustomerMailAddressColumn" msprop:Generator_UserColumnName="CustomerMailAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TotalNetWeightByCustomersView" msprop:Generator_TableClassName="TotalNetWeightByCustomersViewDataTable" msprop:Generator_TableVarName="tableTotalNetWeightByCustomersView" msprop:Generator_TablePropName="TotalNetWeightByCustomersView" msprop:Generator_RowDeletingName="TotalNetWeightByCustomersViewRowDeleting" msprop:Generator_RowChangingName="TotalNetWeightByCustomersViewRowChanging" msprop:Generator_RowEvHandlerName="TotalNetWeightByCustomersViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TotalNetWeightByCustomersViewRowDeleted" msprop:Generator_UserTableName="TotalNetWeightByCustomersView" msprop:Generator_RowChangedName="TotalNetWeightByCustomersViewRowChanged" msprop:Generator_RowEvArgName="TotalNetWeightByCustomersViewRowChangeEvent" msprop:Generator_RowClassName="TotalNetWeightByCustomersViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetWeight" msprop:Generator_ColumnVarNameInTable="columnNetWeight" msprop:Generator_ColumnPropNameInRow="NetWeight" msprop:Generator_ColumnPropNameInTable="NetWeightColumn" msprop:Generator_UserColumnName="NetWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="GrossWeight" msprop:Generator_ColumnVarNameInTable="columnGrossWeight" msprop:Generator_ColumnPropNameInRow="GrossWeight" msprop:Generator_ColumnPropNameInTable="GrossWeightColumn" msprop:Generator_UserColumnName="GrossWeight" type="xs:double" minOccurs="0" />
+              <xs:element name="Tare" msprop:Generator_ColumnVarNameInTable="columnTare" msprop:Generator_ColumnPropNameInRow="Tare" msprop:Generator_ColumnPropNameInTable="TareColumn" msprop:Generator_UserColumnName="Tare" type="xs:double" minOccurs="0" />
+              <xs:element name="DateTimeOut" msprop:Generator_ColumnVarNameInTable="columnDateTimeOut" msprop:Generator_ColumnPropNameInRow="DateTimeOut" msprop:Generator_ColumnPropNameInTable="DateTimeOutColumn" msprop:Generator_UserColumnName="DateTimeOut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TicketNumber" msprop:Generator_ColumnVarNameInTable="columnTicketNumber" msprop:Generator_ColumnPropNameInRow="TicketNumber" msprop:Generator_ColumnPropNameInTable="TicketNumberColumn" msprop:Generator_UserColumnName="TicketNumber" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SelectAllTicketsByCustomersView" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="SelectAllTicketsView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SelectAllTicketsView" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

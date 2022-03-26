@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ViewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CrushWeighDB.dbo.SelectAllTicketsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SelectAllTicketsView">
+    <Key>
+      <PropertyRef Name="Material" />
+      <PropertyRef Name="PlateNumber" />
+      <PropertyRef Name="TicketStatus" />
+    </Key>
+    <Property Name="DateTimeIn" Type="datetime" />
+    <Property Name="DateTimeOut" Type="datetime" />
+    <Property Name="Material" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PlateNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TicketStatus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ViewsModelStoreContainer">
+    <EntitySet Name="SelectAllTicketsView" EntityType="Self.SelectAllTicketsView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SelectAllTicketsView].[DateTimeIn] AS [DateTimeIn], 
+    [SelectAllTicketsView].[DateTimeOut] AS [DateTimeOut], 
+    [SelectAllTicketsView].[Material] AS [Material], 
+    [SelectAllTicketsView].[PlateNumber] AS [PlateNumber], 
+    [SelectAllTicketsView].[TicketStatus] AS [TicketStatus]
+    FROM [dbo].[SelectAllTicketsView] AS [SelectAllTicketsView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

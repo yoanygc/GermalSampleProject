@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CrushWeighDBModelStoreContainer" CdmEntityContainer="Model2Entities">
+    <EntitySetMapping Name="SelectAllTicketsByCustomersViews">
+      <EntityTypeMapping TypeName="CrushWeighDBModel.SelectAllTicketsByCustomersView">
+        <MappingFragment StoreEntitySet="SelectAllTicketsByCustomersView">
+          <ScalarProperty Name="SeqNumber" ColumnName="SeqNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Tare" ColumnName="Tare" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+          <ScalarProperty Name="DateTimeIn" ColumnName="DateTimeIn" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SelectAllTicketsViews">
+      <EntityTypeMapping TypeName="CrushWeighDBModel.SelectAllTicketsView">
+        <MappingFragment StoreEntitySet="SelectAllTicketsView">
+          <ScalarProperty Name="Tare" ColumnName="Tare" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CustomerMailAddress" ColumnName="CustomerMailAddress" />
+          <ScalarProperty Name="CustomerLocation" ColumnName="CustomerLocation" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+          <ScalarProperty Name="DateTimeIn" ColumnName="DateTimeIn" />
+          <ScalarProperty Name="SeqNumber" ColumnName="SeqNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalNetWeightByCustomersViews">
+      <EntityTypeMapping TypeName="CrushWeighDBModel.TotalNetWeightByCustomersView">
+        <MappingFragment StoreEntitySet="TotalNetWeightByCustomersView">
+          <ScalarProperty Name="DateTimeOut" ColumnName="DateTimeOut" />
+          <ScalarProperty Name="Tare" ColumnName="Tare" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

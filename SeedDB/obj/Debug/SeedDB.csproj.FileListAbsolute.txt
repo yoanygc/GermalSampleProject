@@ -1,0 +1,8 @@
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\bin\Debug\SeedDB.exe.config
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\bin\Debug\SeedDB.exe
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\bin\Debug\SeedDB.pdb
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\bin\Debug\Bogus.dll
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\bin\Debug\Bogus.xml
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\obj\Debug\SeedDB.csproj.CoreCompileInputs.cache
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\obj\Debug\SeedDB.exe
+D:\Yoany\Programming\CrushWeigh\CrushWeighProject\SeedDB\obj\Debug\SeedDB.pdb
